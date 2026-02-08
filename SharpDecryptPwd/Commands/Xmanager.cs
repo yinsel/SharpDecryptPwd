@@ -255,7 +255,7 @@ namespace SharpDecryptPwd.Commands
                 byte[] decrypted = RC4Crypt.Decrypt(Key, passData);
 
                 Writer.Out("Decrypt rawPass", Encoding.ASCII.GetString(decrypted) + "\r\n");
-            }else if(ver.StartsWith("7"))
+            }else if(ver.StartsWith("7") || ver.StartsWith("8"))
             {
                 string strkey1 = new string(username.ToCharArray().Reverse().ToArray()) + sid;
                 string strkey2 = new string(strkey1.ToCharArray().Reverse().ToArray());
